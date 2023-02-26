@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{%block title%}Popular{% endblock title%}
+
+<style>
+    li{
+        color:  grey!important;
+    }
+</style>
+{% block content %}
+
+
+    <div class="container ">
+        <h2 id='z' style="text-align: center;">Top Popular Movies</h2>
+        <div class="row">
+            {% for movie in movies %}
+            <div class="col-md-3">
+                <div class="card" id="" style="width: 18rem; height:75%;">
+                    <div class="card-body">
+                        <img src="{{ movie.poster_url }}" class="card-img-top" alt="Poster for {{ movie.title }}" height="65%">
+                        <h5 class="card-title" href="#" role="button" data-bs-toggle="dropdown">{{movie.title|upper}}</h5>
+                        <p class="card-text">
+                        <ul style="list-style: none;"> 
+                            <li>
+                                Genre :
+                                {% for genre in movie.genre %}
+                                {{ genre.name }}
+                                {% if not forloop.last %}, {% endif %}
+                                {% endfor %}
+                            </li>      
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+           
+
+
+        </div>
+    </div>
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,38 @@
+ <!-- # if request.method == 'POST':
+    #     movie_title = request.POST.get('movie_title')
+
+    #     # check if the movie is in the dataframe
+    #     if movie_title not in df['title'].unique():
+    #         print(f"{movie_title} not found in the dataset")
+    #         return
+
+    #     # fetch index of the movie in the dataframe
+    #     movie_index = df[df['title'] == movie_title].index[0]
+
+    #     # use item-item similarity to get top similar movies
+    #     distances = similarity[movie_index]
+    #     movie_list = sorted(list(enumerate(distances)),
+    #                         reverse=True, key=lambda x: x[1])[1:6]
+
+    #     # print top similar movies
+    #     print(f"Top 5 movies similar to {movie_title}:")
+    #     for i in movie_list:
+    #         print(df.iloc[i[0]].title)
+
+    #         # use user-item collaborative filtering to get top rated movies by users
+    #         user_ratings = ratings.merge(movie_md, on='id')
+    #         user_ratings = user_ratings[['userId', 'original_title', 'rating']]
+    #         pt = pd.pivot_table(user_ratings, values='rating',
+    #                             index='userId', columns='original_title')
+    #         target_movie = pt[movie_title]
+    #         similar_movies = pt.corrwith(target_movie)
+    #         corr_target = pd.DataFrame(similar_movies, columns=['correlation'])
+    #         corr_target.dropna(inplace=True)
+    #         # corr_target = corr_target.join(movie_summary['weighted_average'])
+    #         recommended_movies = corr_target[corr_target['correlation'] > 0.05].sort_values(
+    #             by='correlation', ascending=False).head(5)
+
+    #         # print top recommended movies
+    #         print(f"\nTop 5 movies recommended based on user ratings:")
+    #         for title in recommended_movies.index:
+    #             print(title) -->
